@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanat Bek Forvet Osai Umut Samuel Futbol Becerileri</title>
+    <title>Kanat Bek Forvet Ampute Futbol Becerileri</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -13,17 +22,29 @@
             padding: 0;
             color: #333;
         }
+
         h1 {
             color: #ff6347;
             margin-top: 20px;
             font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
         }
+
         h2 {
             color: #444;
             font-style: italic;
             font-size: 1.8em;
             margin: 15px 0;
+            animation: fadeIn 2s ease-in-out 1s;
         }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            animation: slideIn 1.5s ease-out;
+        }
+
         .stats, .testimonial, .gallery {
             margin: 30px auto;
             padding: 20px;
@@ -32,83 +53,133 @@
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        .stats h3, .testimonial h3, .gallery h3 {
+
+        .stats:hover, .testimonial:hover, .gallery:hover {
+            transform: scale(1.05);
+        }
+
+        .stats h3,
+        .testimonial h3,
+        .gallery h3 {
             font-size: 1.6em;
             color: #ff6347;
             margin-bottom: 10px;
         }
-        .stats p, .testimonial p {
+
+        .stats p,
+        .testimonial p {
             font-size: 1.2em;
             color: #666;
             margin: 10px 0;
         }
+
         .gallery img {
             width: 250px;
             height: auto;
             margin: 10px;
             border: 2px solid #ff6347;
             border-radius: 10px;
-            transition: transform 0.2s ease;
+            transition: transform 0.5s ease;
+            animation: bounce 3s infinite;
         }
+
         .gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(5deg);
         }
+
         .testimonial {
             background: #ffefd5;
         }
+
         .testimonial p {
             font-style: italic;
         }
+
         footer {
             margin-top: 50px;
             padding: 20px;
             background-color: #ff6347;
             color: #fff;
             font-size: 1em;
+            animation: fadeIn 3s;
         }
+
         a {
             color: #ff6347;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         a:hover {
             color: #ff4500;
         }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
+
 <body>
-    <h1>Kanat Bek Forvet Umut'un Futbol Onur Salonu (Başarısızlıklar)</h1>
+    <h1>Kanat Bek Forvet Ampute'nin Futbol Onur Salonu (Başarısızlıklar)</h1>
     <h2>Sağ Ayağın Gücü, Sol Ayağın Efsanesi!</h2>
     
-    <div class="stats">
-        <h3>Kariyer İstatistikleri</h3>
-        <p>Atılan Goller: 0 (Belki bir gün sağ ayağıyla!)</p>
-        <p>Sol Ayakla Şut Denemesi: 1 (Başarısız, ama denedi!)</p>
-        <p>Kaçan Şutlar: 342 (ve hala sayıyoruz!)</p>
-    </div>
-    
-    <div class="gallery">
-        <h3>Fotoğraf Galerisi</h3>
-       <div class="gallery">
-   <div class="gallery">
-    <h3>Fotoğraf Galerisi</h3>
-    <img src="WhatsApp%20Image%202024-09-11%20at%2010.00.00.jpg" alt="Kanat Bek Forvet Ampute gol kaçırırken">
-    <img src="WhatsApp%20Image%202024-09-11%20at%2010.30.00.jpg" alt="Kanat Bek Forvet Ampute sol ayağıyla deneme yaparken">
-</div>
+    <div class="container">
+        <div class="stats">
+            <h3>Kariyer İstatistikleri</h3>
+            <p>Atılan Goller: 0 (Belki bir gün sağ ayağıyla!)</p>
+            <p>Sol Ayakla Şut Denemesi: 1 (Başarısız, ama denedi!)</p>
+            <p>Kaçan Şutlar: 342 (ve hala sayıyoruz!)</p>
+        </div>
 
-</div>
+        <div class="gallery">
+            <h3>Fotoğraf Galerisi</h3>
+            <img src="WhatsApp%20Image%202024-09-11%20at%2010.00.00.jpg" alt="Kanat Bek Forvet Ampute gol kaçırırken">
+            <img src="WhatsApp%20Image%202024-09-11%20at%2010.30.00.jpg" alt="Kanat Bek Forvet Ampute sol ayağıyla deneme yaparken">
+        </div>
 
+        <div class="testimonial">
+            <h3>Hayran Yorumları</h3>
+            <p>"Ampute sahada bir efsane! Sağ ayağıyla." - Takım Arkadaşı 1</p>
+            <p>"Sol ayağını kullanabilse dünya çapında bir yıldız olurdu... belki." - Anonim</p>
+        </div>
     </div>
-    
-    <div class="testimonial">
-        <h3>Hayran Yorumları</h3>
-        <p>"Umut sahada bir efsane! Sağ ayağıyla." - Takım Arkadaşı 1</p>
-        <p>"Sol ayağını kullanabilse dünya çapında bir yıldız olurdu... belki." - Anonim</p>
-    </div>
-    
+
     <footer>
-        <p>Her şey eğlence amaçlıdır, seni seviyoruz Kanat Bek Forvet Ampute!</p>
+        <p>Her şey eğlence amaçlıdır, seni seviyoruz Kanat Bek Forvet!</p>
     </footer>
 </body>
+
 </html>
+

@@ -20,6 +20,12 @@
             color: #FFD700; /* Yellow text */
         }
 
+        /* Blur Overlay */
+        .blurred {
+            filter: blur(10px);
+            pointer-events: none; /* Prevent interaction while blurred */
+        }
+
         /* Navigation Bar */
         nav {
             background: #FFD700; /* Yellow */
@@ -207,12 +213,16 @@
     </style>
 
     <script>
-        // Entry Question
+        // Entry Question with Blur Effect
         document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("blurred"); // Add blur effect on load
+
             let correctAnswer = "kanat bek"; // Correct answer
             let userAnswer = prompt("Umut'un en çok oynamak istediği pozisyon nedir?");
             
-            if (userAnswer.toLowerCase() !== correctAnswer) {
+            if (userAnswer && userAnswer.toLowerCase() === correctAnswer) {
+                document.body.classList.remove("blurred"); // Remove blur if answer is correct
+            } else {
                 alert("Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!");
                 document.body.style.display = "none"; // Hide content if incorrect answer
             }
@@ -292,17 +302,5 @@
             <h2>Kariyer İstatistikleri</h2>
             <p>Atılan Goller: 0</p>
             <p>Kaçan Goller: 112</p>
-            <p>Top Kaybı: 289</p>
-            <p>Başarılı Pas: 3</p>
-           ### Explanation
-1. **Entry Question**: 
-   - The **JavaScript prompt** is used to ask the question, `"Umut'un en çok oynamak istediği pozisyon nedir?"` (Translation: "What is the position that Umut likes to play the most?").
-   - The correct answer is set as `"kanat bek"`.
-   - If the visitor's answer is incorrect, a message is shown and the page content is hidden (`document.body.style.display = "none"`).
+            
 
-2. **Message for Incorrect Answer**:
-   - If the answer is incorrect, the visitor will see the alert `"Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!"` (Translation: "You are not good enough of a soccer player to see this content!").
-
-### Integration
-- This code should be placed **within the `<head>` section**, before the content is loaded.
-- This solution will ensure that the page won't be accessible until the correct answer is provided, making it a fun and interactive entry point for the website.

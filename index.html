@@ -151,6 +151,26 @@
             transform: scale(1.05);
         }
 
+        /* Statistics Section */
+        .stats {
+            background: #ffffff; /* White */
+            color: #000080; /* Navy Blue */
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .stats h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .stats p {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
         /* Contact Section */
         .contact {
             background: #FFD700; /* Yellow */
@@ -185,6 +205,19 @@
             margin-top: 30px;
         }
     </style>
+
+    <script>
+        // Entry Question
+        document.addEventListener("DOMContentLoaded", function () {
+            let correctAnswer = "kanat bek"; // Correct answer
+            let userAnswer = prompt("Umut'un en çok oynamak istediği pozisyon nedir?");
+            
+            if (userAnswer.toLowerCase() !== correctAnswer) {
+                alert("Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!");
+                document.body.style.display = "none"; // Hide content if incorrect answer
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -254,28 +287,22 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery" class="gallery">
-            <h2>Fotoğraf Galerisi</h2>
-            <div class="gallery-grid">
-                <img src="ampute1.jpg" alt="Kanat Bek Forvet Umut gol kaçırırken">
-                <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut sol ayağıyla deneme yaparken">
-                <img src="ampute 3.webp" alt="Kanat Bek Forvet Umut'un en iyi anı">
-            </div>
-        </section>
+        <!-- Statistics Section -->
+        <section class="stats">
+            <h2>Kariyer İstatistikleri</h2>
+            <p>Atılan Goller: 0</p>
+            <p>Kaçan Goller: 112</p>
+            <p>Top Kaybı: 289</p>
+            <p>Başarılı Pas: 3</p>
+           ### Explanation
+1. **Entry Question**: 
+   - The **JavaScript prompt** is used to ask the question, `"Umut'un en çok oynamak istediği pozisyon nedir?"` (Translation: "What is the position that Umut likes to play the most?").
+   - The correct answer is set as `"kanat bek"`.
+   - If the visitor's answer is incorrect, a message is shown and the page content is hidden (`document.body.style.display = "none"`).
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <h2>İletişim</h2>
-            <p>Beni sosyal medyada takip etmek için aşağıdaki bağlantılara tıklayın:</p>
-            <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
-        </section>
-    </div>
+2. **Message for Incorrect Answer**:
+   - If the answer is incorrect, the visitor will see the alert `"Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!"` (Translation: "You are not good enough of a soccer player to see this content!").
 
-    <!-- Footer -->
-    <footer>
-        <p>Her şey eğlence amaçlıdır, seni seviyoruz Kanat Bek Forvet Umut!</p>
-    </footer>
-</body>
-
-</html>
+### Integration
+- This code should be placed **within the `<head>` section**, before the content is loaded.
+- This solution will ensure that the page won't be accessible until the correct answer is provided, making it a fun and interactive entry point for the website.

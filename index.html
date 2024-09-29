@@ -21,7 +21,7 @@
         }
 
         /* Blur Overlay */
-        .blurred {
+        #content {
             filter: blur(10px);
             pointer-events: none; /* Prevent interaction while blurred */
         }
@@ -215,13 +215,14 @@
     <script>
         // Entry Question with Blur Effect
         document.addEventListener("DOMContentLoaded", function () {
-            document.body.classList.add("blurred"); // Add blur effect on load
-
+            let content = document.getElementById("content");
             let correctAnswer = "kanat bek"; // Correct answer
+
             let userAnswer = prompt("Umut'un en çok oynamak istediği pozisyon nedir?");
             
             if (userAnswer && userAnswer.toLowerCase() === correctAnswer) {
-                document.body.classList.remove("blurred"); // Remove blur if answer is correct
+                content.style.filter = "none"; // Remove blur if answer is correct
+                content.style.pointerEvents = "auto"; // Allow interaction if answer is correct
             } else {
                 alert("Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!");
                 document.body.style.display = "none"; // Hide content if incorrect answer
@@ -231,76 +232,59 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div>Kanat Bek Forvet Umut</div>
-        <div>
-            <a href="#about">Hakkında</a>
-            <a href="#gallery">Galeri</a>
-            <a href="#contact">İletişim</a>
-        </div>
-    </nav>
-
-    <!-- Slider Section -->
-    <section class="slider">
-        <div class="slides">
-            <div class="slide">
-                <img src="ampute1.jpg" alt="Kanat Bek Forvet Umut aksiyonda">
+    <div id="content">
+        <!-- Navigation Bar -->
+        <nav>
+            <div>Kanat Bek Forvet Umut</div>
+            <div>
+                <a href="#about">Hakkında</a>
+                <a href="#gallery">Galeri</a>
+                <a href="#contact">İletişim</a>
             </div>
-            <div class="slide">
-                <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut en iyi anı">
+        </nav>
+
+        <!-- Slider Section -->
+        <section class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="ampute1.jpg" alt="Kanat Bek Forvet Umut aksiyonda">
+                </div>
+                <div class="slide">
+                    <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut en iyi anı">
+                </div>
+                <div class="slide">
+                    <img src="ampute 3.webp" alt="Kanat Bek Forvet Umut şut anı">
+                </div>
             </div>
-            <div class="slide">
-                <img src="ampute 3.webp" alt="Kanat Bek Forvet Umut şut anı">
-            </div>
-        </div>
-        <div class="nav-buttons">
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-        </div>
-    </section>
-
-    <!-- JavaScript for Slider Functionality -->
-    <script>
-        let currentIndex = 0;
-
-        const slides = document.querySelector('.slides');
-        const slide = document.querySelectorAll('.slide');
-        const totalSlides = slide.length;
-
-        document.querySelector('.next').addEventListener('click', function () {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        });
-
-        document.querySelector('.prev').addEventListener('click', function () {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        });
-
-        function updateSlider() {
-            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
-        }
-    </script>
-
-    <!-- Main Content -->
-    <div class="container">
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut hakkında">
-            <div class="about-content">
-                <h2>Hakkında</h2>
-                <p>Kanat Bek Forvet Umut, sağ ayağıyla oynayan efsanevi bir futbolcu olarak tanınır. Kariyeri boyunca
-                    pek çok kaçırılmış fırsatla anılsa da, kendisi her zaman gülümsemesini korumuştur. Futbol sahasında
-                    unutulmaz anlarıyla, mizah dolu kişiliğiyle taraftarlarının gönlünde taht kurmuştur.</p>
+            <div class="nav-buttons">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="stats">
-            <h2>Kariyer İstatistikleri</h2>
-            <p>Atılan Goller: 0</p>
-            <p>Kaçan Goller: 112</p>
-            
+        <!-- Main Content -->
+        <div class="container">
 
+            <!-- About Section -->
+            <section id="about" class="about">
+                <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut hakkında">
+                <div class="about-content">
+                    <h2>Hakkında</h2>
+                    <p>Kanat Bek Forvet Umut, sağ ayağıyla oynayan efsanevi bir futbolcu olarak tanınır. Kariyeri boyunca
+                        pek çok kaçırılmış fırsatla anılsa da, kendisi her zaman gülümsemesini korumuştur. Futbol sahasında
+                        unutulmaz anlarıyla, mizah dolu kişiliğiyle taraftarlarının gönlünde taht kurmuştur.</p>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats">
+                <h2>Kariyer İstatistikleri</h2>
+                <p>Atılan Goller: 0</p>
+                <p>Kaçan Goller: 112</p>
+                <p>Top Kaybı: 289</p>
+                <p>Başarılı Pas: 3</p>
+                <p>Başarısız Pas: 174</p>
+                <p>Sarı Kart: 24</p>
+                <p>Kırmızı Kart: 5</p>
+                <p>Oynanan Maç: 50</p>
+            </section>

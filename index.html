@@ -7,228 +7,6 @@
     <title>Kanat Bek Forvet Umut - Resmi Web Sitesi</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #000080; /* Navy Blue */
-            color: #FFD700; /* Yellow text */
-        }
-
-        /* Blur Overlay */
-        #content {
-            filter: blur(10px);
-            pointer-events: none; /* Prevent interaction while blurred */
-        }
-
-        /* Navigation Bar */
-        nav {
-            background: #FFD700; /* Yellow */
-            color: #000080; /* Navy Blue */
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav a {
-            color: #000080; /* Navy Blue */
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #ffffff; /* White on hover */
-        }
-
-        /* Slider Section */
-        .slider {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            transition: 0.5s;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 80vh;
-            object-fit: cover;
-        }
-
-        /* Slider Navigation */
-        .nav-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .prev,
-        .next {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #FFD700; /* Yellow */
-            border: none;
-            font-size: 2em;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        /* Main Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 50px auto;
-            text-align: left;
-        }
-
-        /* About Section */
-        .about {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .about img {
-            width: 40%;
-            border-radius: 15px;
-            border: 3px solid #FFD700; /* Yellow border */
-        }
-
-        .about-content {
-            flex: 1;
-        }
-
-        .about-content h2 {
-            font-size: 2.2em;
-            color: #ffffff; /* White */
-            margin-bottom: 15px;
-        }
-
-        .about-content p {
-            line-height: 1.6;
-            font-size: 1.1em;
-            color: #FFD700; /* Yellow */
-        }
-
-        /* Gallery Section */
-        .gallery {
-            margin-bottom: 50px;
-        }
-
-        .gallery h2 {
-            font-size: 2.2em;
-            color: #ffffff; /* White */
-            margin-bottom: 20px;
-        }
-
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .gallery img {
-            width: calc(33.333% - 10px);
-            border-radius: 10px;
-            transition: transform 0.3s;
-            border: 3px solid #FFD700; /* Yellow border */
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Statistics Section */
-        .stats {
-            background: #ffffff; /* White */
-            color: #000080; /* Navy Blue */
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .stats h2 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-
-        .stats p {
-            font-size: 1.3em;
-            margin: 10px 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: #FFD700; /* Yellow */
-            color: #000080; /* Navy Blue */
-            padding: 40px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .contact h2 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-
-        .contact a {
-            color: #000080; /* Navy Blue */
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 700;
-        }
-
-        footer {
-            background: #000080; /* Navy Blue */
-            color: #FFD700; /* Yellow */
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
-
-    <script>
-        // Entry Question with Blur Effect
-        document.addEventListener("DOMContentLoaded", function () {
-            let content = document.getElementById("content");
-            let correctAnswer = "kanat bek"; // Correct answer
-
-            let userAnswer = prompt("Umut'un en çok oynamak istediği pozisyon nedir?");
-            
-            if (userAnswer && userAnswer.toLowerCase() === correctAnswer) {
-                content.style.filter = "none"; // Remove blur if answer is correct
-                content.style.pointerEvents = "auto"; // Allow interaction if answer is correct
-            } else {
-                alert("Yeterince iyi bir futbolcu değilsin, bu içeriği görmeye layık değilsin!");
-                document.body.style.display = "none"; // Hide content if incorrect answer
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -288,3 +66,34 @@
                 <p>Kırmızı Kart: 5</p>
                 <p>Oynanan Maç: 50</p>
             </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery">
+                <h2>Fotoğraf Galerisi</h2>
+                <div class="gallery-grid">
+                    <img src="ampute1.jpg" alt="Kanat Bek Forvet Umut gol kaçırırken">
+                    <img src="ampute 2.jpeg" alt="Kanat Bek Forvet Umut sol ayağıyla deneme yaparken">
+                    <img src="ampute 3.webp" alt="Kanat Bek Forvet Umut'un en iyi anı">
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <h2>İletişim</h2>
+                <p>Beni sosyal medyada takip etmek için aşağıdaki bağlantılara tıklayın:</p>
+                <a href="https://www.instagram.com/umutdurgunxx/" target="_blank">Instagram</a> |
+                <a href="https://x.com/Umutdurgunxx" target="_blank">Twitter</a> |
+                <a href="https://www.facebook.com/umut.durgun.146" target="_blank">Facebook</a>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Her şey eğlence amaçlıdır, seni seviyoruz Kanat Bek Forvet Umut!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
